@@ -18,7 +18,7 @@ RUN echo 'pl_PL.UTF-8 UTF-8' > /etc/locale.gen &&\
     dpkg-reconfigure locales -f noninteractive &&\
     update-locale LANG='pl_PL.UTF-8'
 
-RUN MAILPILE_VERSION='1.0.0rc2' &&\
+RUN MAILPILE_VERSION='1.0.0rc5' &&\
     DEST='/opt/mailpile' && mkdir -p ${DEST} &&\
     curl -Ls "https://github.com/mailpile/Mailpile/archive/${MAILPILE_VERSION}.tar.gz" | tar --strip-components=1 -C "${DEST}" -xvzf - &&\
     pip install -r "${DEST}"/requirements.txt &&\
